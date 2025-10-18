@@ -1,0 +1,18 @@
+# Librerías principales para procesamiento y análisis de imágenes
+opencv-python==4.10.0.84  # Procesamiento de imágenes y visión por computador
+numpy==1.26.4            # Computación numérica y arrays
+pandas==2.2.2           # Análisis de datos y manipulación de DataFrames
+matplotlib==3.8.4       # Visualización de datos y gráficos
+Pillow==10.4.0         # Procesamiento de imágenes y formatos
+
+# Entorno interactivo y desarrollo
+jupyter==1.1.1         # Entorno interactivo de notebooks
+ipykernel==6.29.4      # Kernel de Python para Jupyter
+notebook==7.2.1        # Servidor de Jupyter Notebook
+
+# Utilidades del sistema y manejo de rutas
+pathlib==1.0.1         # Manipulación de rutas del sistema de archivos
+
+# Dependencias opcionales recomendadas
+scikit-image>=0.21.0   # Procesamiento avanzado de imágenes
+scipy>=1.11.0          # Funciones científicas y procesamiento de señales

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Técnico: Grillo Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 5px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+        }
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .math {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Informe técnico: calibración de cámara, análisis de imágenes de fachadas y segmentación de colores</h1>
+
+<p><strong>Equipo:</strong> Grillo Digital<br>
+<strong>Repositorio base:</strong> <code>vis-comp-202502-grillo-digital-main/</code><br>
+<strong>Enfoque:</strong> Implementación reproducible con resultados numéricos y visuales clave.</p>
+
+<blockquote>
+    <p>Este documento consolida resultados y evidencias de: calibración de cámara, operaciones de intensidad, transformaciones geométricas, ecualización de histograma (CDF) y segmentación por color. Se referencia directamente a artefactos dentro del proyecto.</p>
+</blockquote>
+
+<h2>Índice</h2>
+<ol>
+    <li><a href="#resumen">Resumen</a></li>
+    <li><a href="#introduccion">Introducción</a></li>
+    <li><a href="#objetivos">Objetivos y alcance</a></li>
+    <li><a href="#fundamento">Fundamento técnico</a></li>
+    <li><a href="#metodologia">Metodología por componente</a></li>
+    <li><a href="#resultados">Resultados y análisis</a></li>
+    <li><a href="#discusion">Discusión y análisis crítico</a></li>
+    <li><a href="#conclusiones">Conclusiones</a></li>
+    <li><a href="#contribucion">Contribución individual</a></li>
+    <li><a href="#referencias">Referencias</a></li>
+</ol>
+
+<h2 id="resumen">1. Resumen</h2>
+<p>Este informe presenta un flujo integral de procesamiento de imágenes dividido en tres etapas: (1) calibración de cámara, (2) análisis de imágenes de fachadas y (3) segmentación por color. En la primera etapa se estiman los parámetros intrínsecos de la cámara y los coeficientes de distorsión a partir de un patrón de tablero de ajedrez, con el fin de corregir distorsiones ópticas y mejorar la fidelidad geométrica de las imágenes.</p>
+
+<h2 id="introduccion">2. Introducción</h2>
+<p>La visión por computador integra técnicas de geometría, fotometría y aprendizaje automático para extraer información útil de imágenes. Un reto recurrente en aplicaciones prácticas es la variabilidad de la captura: diferentes cámaras, ópticas y condiciones de iluminación impactan tanto la apariencia como la geometría de la escena.</p>
+
+<h2 id="objetivos">3. Objetivos y alcance</h2>
+<ul>
+    <li><strong>Calibrar una cámara real</strong>: obtener parámetros intrínsecos y coeficientes de distorsión</li>
+    <li><strong>Aplicar operaciones de intensidad</strong>: brillo, contraste, gamma</li>
+    <li><strong>Implementar transformaciones geométricas</strong>: rotaciones, traslaciones, escalas</li>
+    <li><strong>Analizar distribuciones tonales</strong>: histogramas y ecualización</li>
+</ul>
+
+<h2 id="fundamento">4. Fundamento técnico</h2>
+<h3>4.1 Calibración de cámara y distorsión</h3>
+<p>El modelo pinhole describe la proyección de puntos 3D al plano imagen mediante una matriz intrínseca K. La matriz de transformación afín se representa como:</p>
+<div class="math">
+    A = [a11 a12 tx; a21 a22 ty]
+</div>
+
+<h2 id="metodologia">5. Metodología por componente</h2>
+<h3>5.1 Calibración de cámara</h3>
+<ul>
+    <li>12-15 imágenes del patrón</li>
+    <li>Detección de esquinas con OpenCV</li>
+    <li>Estimación de parámetros</li>
+</ul>
+
+<h2 id="resultados">6. Resultados y análisis</h2>
+<h3>6.3 Segmentación por color</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Color</th>
+            <th>Objetos</th>
+            <th>Área total (px)</th>
+            <th>Área promedio (px)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Blanco</td>
+            <td>5</td>
+            <td>469,281</td>
+            <td>93,856.2</td>
+        </tr>
+        <tr>
+            <td>Marrón</td>
+            <td>4</td>
+            <td>113,316</td>
+            <td>28,329.0</td>
+        </tr>
+        <tr>
+            <td>Negro</td>
+            <td>4</td>
+            <td>71,670</td>
+            <td>17,917.5</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="discusion">7. Discusión y análisis crítico</h2>
+<h3>7.1 Logros principales</h3>
+<ul>
+    <li>Calibración consistente</li>
+    <li>Normalización fotométrica efectiva</li>
+    <li>Segmentación reproducible</li>
+</ul>
+
+<h2 id="conclusiones">8. Conclusiones</h2>
+<p>El proyecto demuestra un flujo de trabajo efectivo para el análisis y procesamiento de imágenes, desde la calibración hasta la segmentación por color.</p>
+
+<h2 id="contribucion">9. Contribución individual</h2>
+<table>
+    <tr>
+        <th>Integrante</th>
+        <th>Actividades clave</th>
+    </tr>
+    <tr>
+        <td>Andres Felipe Moreno Calle</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>David Giraldo Valencia</td>
+        <td>Calibración, segmentación, documentación</td>
+    </tr>
+    <tr>
+        <td>Juan Pablo Palacio Perez</td>
+        <td>Calibración, análisis, redacción</td>
+    </tr>
+    <tr>
+        <td>Victor Manuel Velasquez Cabeza</td>
+        <td>Calibración, fotografía</td>
+    </tr>
+</table>
+
+<h2 id="referencias">10. Referencias</h2>
+<ul>
+    <li>Sadekar, K., & Mallick, S. (2020). <em>Camera Calibration using OpenCV.</em></li>
+    <li>Bradski, G. (2000). <em>The OpenCV Library.</em></li>
+    <li>Gonzalez, R. C., & Woods, R. E. (2018). <em>Digital Image Processing.</em></li>
+    <li>Szeliski, R. (2022). <em>Computer Vision: Algorithms and Applications.</em></li>
+</ul>
+
+</body>
+</html>
