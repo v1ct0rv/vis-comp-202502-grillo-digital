@@ -1,0 +1,7 @@
+README.md
+setup.py
+color_segmentation.egg-info/PKG-INFO
+color_segmentation.egg-info/SOURCES.txt
+color_segmentation.egg-info/dependency_links.txt
+color_segmentation.egg-info/requires.txt
+color_segmentation.egg-info/top_level.txt

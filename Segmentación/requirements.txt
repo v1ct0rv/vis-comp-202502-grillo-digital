@@ -1,0 +1,14 @@
+# Librerías principales para procesamiento y análisis de imágenes
+opencv-python==4.10.0.84
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.8.4
+Pillow==10.4.0
+
+# Entorno interactivo y desarrollo
+jupyter==1.1.1
+ipykernel==6.29.4
+notebook==7.2.1
+
+# Utilidades del sistema y manejo de rutas
+pathlib==1.0.1

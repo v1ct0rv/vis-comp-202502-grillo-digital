@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: color_segmentation
+Version: 0.1.1
+Summary: Herramientas para segmentación y análisis de colores en imágenes usando OpenCV y NumPy
+Author: Grillo Digital
+Requires-Python: >=3.9
+Requires-Dist: opencv-python==4.10.0.84
+Requires-Dist: numpy==1.26.4
+Requires-Dist: pandas==2.2.2
+Requires-Dist: matplotlib==3.8.4
+Requires-Dist: Pillow==10.4.0
+Requires-Dist: jupyter==1.1.1
+Requires-Dist: ipykernel==6.29.4
+Requires-Dist: notebook==7.2.1
+Requires-Dist: pathlib==1.0.1
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
