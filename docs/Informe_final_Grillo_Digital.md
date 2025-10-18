@@ -172,7 +172,7 @@ El proyecto demuestra un flujo de trabajo efectivo para:
 
 | Integrante | Actividades clave |
 |------------|------------------|
-| Andres Felipe Moreno Calle | |
+| Andres Felipe Moreno Calle | Analisis Calibracion, Analisis Segmentación, Documentación  |
 | David Giraldo Valencia | Calibración, segmentación, documentación |
 | Juan Pablo Palacio Perez | Calibración, análisis, redacción |
 | Victor Manuel Velasquez Cabeza | Calibración, fotografía |
